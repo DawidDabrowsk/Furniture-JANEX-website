@@ -1,0 +1,559 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgroundColor: rgb(228, 228, 228);
+  --light: rgb(211, 198, 198);
+  --gold: rgb(255, 215, 0);
+  --titleColor: rgb(5, 166, 81);
+  --shadowColor: rgb(146, 144, 144);
+  --infoColor: rgba(10, 0, 0, 0.678);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--backgroundColor);
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  text-transform: uppercase;
+  background: none;
+  z-index: 10;
+}
+nav .burgerIcon {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  cursor: pointer;
+}
+nav .burgerIcon .navBurger {
+  font-size: 26px;
+  color: var(--backgroundColor);
+}
+nav .navItems {
+  display: none;
+  width: 100%;
+}
+nav .navItemsMobile {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 71px;
+  left: 0;
+}
+nav .active {
+  display: block;
+  animation: showNav 2s;
+}
+nav .navItemsMobile a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 20px;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--light);
+  transition: color 0.5s, border-bottom 0.5s;
+}
+nav .navItemsMobile a:last-child {
+  padding-bottom: 15px;
+}
+
+.hero-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  background-image: url(../img/hero\ big.jpg);
+  background-size: cover;
+  z-index: 0;
+}
+.hero-img .hero-text {
+  position: absolute;
+  z-index: 0;
+}
+.hero-img .hero-text .important {
+  color: var(--gold);
+}
+.hero-img .hero-text h1,
+.hero-img .hero-text h2 {
+  margin: 5%;
+  color: var(--light);
+}
+.hero-img .hero-text h1 {
+  font-size: 22px;
+}
+.hero-img .hero-text h2 {
+  font-size: 14px;
+  margin-bottom: 20%;
+}
+.hero-img .hero-text .about {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--gold);
+}
+.hero-img .hero-text .about:hover {
+  background-color: black;
+  color: var(--backgroundColor);
+}
+.hero-img .hero-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -5;
+}
+
+.facebook {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+}
+.facebook .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(180, 180, 180);
+}
+.facebook .circle a i {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  font-size: 26px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60vw;
+}
+main .wrapper .title {
+  position: relative;
+  margin: 5% 0;
+  width: 200px;
+  text-align: center;
+  font-size: 28px;
+  color: var(--titleColor);
+}
+main .wrapper .title::after {
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  left: 25%;
+  bottom: -5px;
+  background-color: var(--infoColor);
+  content: "";
+}
+main .wrapper #gallery ul {
+  list-style-type: none;
+}
+main .wrapper #gallery ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .wrapper #gallery ul li img {
+  margin: 3%;
+  border: 3px solid grey;
+  border-radius: 5%;
+}
+main .wrapper #gallery ul li img:hover {
+  transition: transform 0.3s;
+  transform: scale(1.5);
+}
+main .wrapper #services {
+  margin-top: 0;
+}
+main .wrapper section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0;
+  flex-direction: column;
+}
+main .wrapper section img {
+  margin: 20px 0;
+  width: 250px;
+}
+main .wrapper section .main-text {
+  margin-top: 20px;
+  text-align: center;
+}
+main .wrapper section .main-text .text {
+  font-size: 14px;
+  line-height: 22px;
+}
+main .wrapper section .main-text .text .brand {
+  font-size: 16px;
+  color: var(--titleColor);
+}
+main .wrapper section .main-text .text .area,
+main .wrapper section .main-text .text .brand {
+  font-weight: bold;
+}
+main .wrapper section .main-text ul {
+  margin: 5% 0;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+main .wrapper section .main-text ul li {
+  margin: 2%;
+}
+main .wrapper section .main-text ul li a:visited,
+main .wrapper section .main-text ul li a:link {
+  color: var(--titleColor);
+  text-decoration: none;
+}
+main .wrapper section .project,
+main .wrapper section .transport,
+main .wrapper section .installation,
+main .wrapper section .sale {
+  margin: 20px;
+  width: 200px;
+  height: 250px;
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px var(--shadowColor);
+}
+main .wrapper section .project i,
+main .wrapper section .transport i,
+main .wrapper section .installation i,
+main .wrapper section .sale i {
+  margin: 10%;
+  font-size: 36px;
+}
+main .wrapper section .project .service,
+main .wrapper section .transport .service,
+main .wrapper section .installation .service,
+main .wrapper section .sale .service {
+  position: relative;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+main .wrapper section .project .service::after,
+main .wrapper section .transport .service::after,
+main .wrapper section .installation .service::after,
+main .wrapper section .sale .service::after {
+  position: absolute;
+  width: 80%;
+  height: 1px;
+  bottom: -10px;
+  left: 10%;
+  background-color: black;
+  content: "";
+}
+main .wrapper section .project .service-text,
+main .wrapper section .transport .service-text,
+main .wrapper section .installation .service-text,
+main .wrapper section .sale .service-text {
+  margin: 0 10px;
+  line-height: 18px;
+  font-size: 12px;
+}
+main .wrapper #contact {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: auto;
+  background-color: var(--infoColor);
+}
+main .wrapper #contact .title {
+  margin-top: 5%;
+  color: var(--backgroundColor);
+}
+main .wrapper #contact .title::after {
+  color: var(--backgroundColor);
+  content: "";
+}
+main .wrapper #contact .info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--backgroundColor);
+}
+main .wrapper #contact .card {
+  width: 100%;
+  margin: 10% 0;
+}
+main .wrapper #contact .card .contact-way {
+  font-size: 40px;
+}
+main .wrapper #contact .card i {
+  margin: 7% 0 3%;
+  font-size: 18px;
+}
+main .wrapper #contact .card .data {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .facebook {
+    width: 100px;
+    height: 100px;
+  }
+  .facebook .circle {
+    width: 200px;
+    height: 200px;
+  }
+  .facebook .circle a i {
+    right: 15px;
+    bottom: 15px;
+    font-size: 45px;
+  }
+  nav {
+    flex-direction: row;
+    height: 10%;
+  }
+  nav .navItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .navItems a {
+    padding: 10px 15px;
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--light);
+    border-bottom: none;
+    transition: color 0.7s, border-bottom 0.5s;
+  }
+  nav .navItems a:hover {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
+  nav .burgerIcon {
+    display: none;
+  }
+  nav .navItemsMobile {
+    display: none;
+    background: none;
+  }
+  .hero-img .hero-text h1 {
+    font-size: 38px;
+  }
+  .hero-img .hero-text h2 {
+    font-size: 28px;
+  }
+  .hero-img .hero-text .about {
+    font-size: 22px;
+    padding: 15px;
+  }
+  main .wrapper .title {
+    font-size: 38px;
+  }
+  main .wrapper #gallery ul li img {
+    width: 550px;
+  }
+  main .wrapper #gallery ul li img:hover {
+    transform: scale(1.5);
+  }
+  main .wrapper section img {
+    width: 400px;
+  }
+  main .wrapper section .main-text .text {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  main .wrapper section .main-text .text .brand {
+    font-size: 28px;
+  }
+  main .wrapper section .main-text ul {
+    font-size: 28px;
+  }
+  main .wrapper #services .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+  }
+  main .wrapper #services .cards .project,
+  main .wrapper #services .cards .transport,
+  main .wrapper #services .cards .installation,
+  main .wrapper #services .cards .sale {
+    width: 150px;
+    height: 250px;
+  }
+  main .wrapper #services .cards .project i,
+  main .wrapper #services .cards .transport i,
+  main .wrapper #services .cards .installation i,
+  main .wrapper #services .cards .sale i {
+    font-size: 36px;
+  }
+  main .wrapper #services .cards .project .service,
+  main .wrapper #services .cards .transport .service,
+  main .wrapper #services .cards .installation .service,
+  main .wrapper #services .cards .sale .service {
+    font-size: 16px;
+  }
+  main .wrapper #services .cards .project .service-text,
+  main .wrapper #services .cards .transport .service-text,
+  main .wrapper #services .cards .installation .service-text,
+  main .wrapper #services .cards .sale .service-text {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  main .wrapper #contact .info {
+    width: 80%;
+    flex-direction: row;
+  }
+  main .wrapper #contact .info .card {
+    width: 20%;
+    margin: 2% 5% 5%;
+  }
+  main .wrapper #contact .info .card .contact-way {
+    font-size: 28px;
+  }
+  main .wrapper #contact .info .card i {
+    margin: 10px;
+    font-size: 14px;
+  }
+  main .wrapper #contact .info .card .data {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  nav .navItems a {
+    padding: 15px 25px;
+    font-size: 22px;
+  }
+  .hero-img .hero-text h1 {
+    font-size: 44px;
+  }
+  .hero-img .hero-text h2 {
+    font-size: 26px;
+    margin-bottom: 15%;
+  }
+  .hero-img .hero-text .about {
+    font-size: 24px;
+    padding: 15px;
+  }
+  main .wrapper #gallery ul {
+    text-align: center;
+  }
+  main .wrapper #gallery ul li {
+    display: inline;
+  }
+  main .wrapper #gallery ul li img {
+    margin: 3%;
+    width: 350px;
+  }
+  main .wrapper #gallery ul li img:hover {
+    transform: scale(1.8);
+  }
+  main .wrapper .title {
+    font-size: 40px;
+  }
+  main .wrapper section img {
+    width: 400px;
+  }
+  main .wrapper section .main-text .text {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  main .wrapper section .main-text .text .brand {
+    font-size: 28px;
+  }
+  main .wrapper section .main-text ul {
+    font-size: 28px;
+  }
+  main .wrapper #services .cards .project,
+  main .wrapper #services .cards .transport,
+  main .wrapper #services .cards .installation,
+  main .wrapper #services .cards .sale {
+    margin: 3%;
+    width: 200px;
+    height: 300px;
+  }
+  main .wrapper #services .cards .project i,
+  main .wrapper #services .cards .transport i,
+  main .wrapper #services .cards .installation i,
+  main .wrapper #services .cards .sale i {
+    font-size: 48px;
+  }
+  main .wrapper #services .cards .project .service,
+  main .wrapper #services .cards .transport .service,
+  main .wrapper #services .cards .installation .service,
+  main .wrapper #services .cards .sale .service {
+    font-size: 20px;
+  }
+  main .wrapper #services .cards .project .service-text,
+  main .wrapper #services .cards .transport .service-text,
+  main .wrapper #services .cards .installation .service-text,
+  main .wrapper #services .cards .sale .service-text {
+    margin: 5%;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  main .wrapper #contact .title {
+    margin: 2%;
+  }
+  main .wrapper #contact .info {
+    width: 70%;
+  }
+  main .wrapper #contact .info .card .contact-way {
+    font-size: 36px;
+  }
+  main .wrapper #contact .info .card i {
+    margin: 10px;
+    font-size: 14px;
+  }
+  main .wrapper #contact .info .card .data {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+@keyframes showNav {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
